@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class smallShop_05 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        String product = scan.nextLine();
+        String city = scan.nextLine();
+        double quantityOfProduct = Double.parseDouble(scan.nextLine());
+
+        double priceOfProduct = 0;
+
+        if (city.equals("Sofia")){
+            if (product.equals("coffee")){
+                priceOfProduct = 0.5 * quantityOfProduct;
+            }else if (product.equals("water")){
+                priceOfProduct = 0.8 * quantityOfProduct;
+            }else if (product.equals("beer")){
+                priceOfProduct = 1.2 * quantityOfProduct;
+            }else if (product.equals("sweets")){
+                priceOfProduct = 1.45 * quantityOfProduct;
+            }else if (product.equals("peanuts")){
+                priceOfProduct = 1.6 * quantityOfProduct;
+            }
+        }else if (city.equals("Plovdiv")){
+            if (product.equals("coffee")){
+                priceOfProduct = 0.4 * quantityOfProduct;
+            }else if (product.equals("water")){
+                priceOfProduct = 0.7 * quantityOfProduct;
+            }else if (product.equals("beer")){
+                priceOfProduct = 1.15 * quantityOfProduct;
+            }else if (product.equals("sweets")){
+                priceOfProduct = 1.3 * quantityOfProduct;
+            }else if (product.equals("peanuts")){
+                priceOfProduct = 1.5 * quantityOfProduct;
+            }
+        }else if (city.equals("Varna")){
+            if (product.equals("coffee")){
+                priceOfProduct = 0.45 * quantityOfProduct;
+            }else if (product.equals("water")){
+                priceOfProduct = 0.7 * quantityOfProduct;
+            }else if (product.equals("beer")){
+                priceOfProduct = 1.1 * quantityOfProduct;
+            }else if (product.equals("sweets")){
+                priceOfProduct = 1.35 * quantityOfProduct;
+            }else if (product.equals("peanuts")){
+                priceOfProduct = 1.55 * quantityOfProduct;
+            }
+        }
+        System.out.printf("%.2f", priceOfProduct);
+    }
+}
