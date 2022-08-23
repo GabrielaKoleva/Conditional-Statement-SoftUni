@@ -1,0 +1,69 @@
+import java.util.Scanner;
+
+public class fruitShop_11 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        String product = scan.nextLine();
+        String dayOfWeek = scan.nextLine();
+        double quantityOfProduct = Double.parseDouble(scan.nextLine());
+
+        double priceIfProduct = 0;
+
+        if (dayOfWeek.equals("Monday") || dayOfWeek.equals("Tuesday")
+        || dayOfWeek.equals("Wednesday") || dayOfWeek.equals("Thursday")
+        || dayOfWeek.equals("Friday")){
+            if (product.equals("banana")){
+                priceIfProduct = quantityOfProduct * 2.5;
+                System.out.printf("%.2f",priceIfProduct);
+            }else if (product.equals("apple")){
+                priceIfProduct = quantityOfProduct * 1.2;
+                System.out.printf("%.2f",priceIfProduct);
+            }else if (product.equals("orange")){
+                priceIfProduct = quantityOfProduct * 0.85;
+                System.out.printf("%.2f",priceIfProduct);
+            }else if (product.equals("grapefruit")){
+                priceIfProduct = quantityOfProduct * 1.45;
+                System.out.printf("%.2f",priceIfProduct);
+            }else if (product.equals("kiwi")){
+                priceIfProduct = quantityOfProduct * 2.7;
+                System.out.printf("%.2f",priceIfProduct);
+            }else if (product.equals("pineapple")){
+                priceIfProduct = quantityOfProduct * 5.5;
+                System.out.printf("%.2f",priceIfProduct);
+            }else if (product.equals("grapes")){
+                priceIfProduct = quantityOfProduct * 3.85;
+                System.out.printf("%.2f",priceIfProduct);
+            }else {
+                System.out.println("error");
+            }
+        }else if (dayOfWeek.equals("Saturday") || dayOfWeek.equals("Sunday")){
+            if (product.equals("banana")){
+                priceIfProduct = quantityOfProduct * 2.7;
+                System.out.printf("%.2f",priceIfProduct);
+            }else if (product.equals("apple")){
+                priceIfProduct = quantityOfProduct * 1.25;
+                System.out.printf("%.2f",priceIfProduct);
+            }else if (product.equals("orange")){
+                priceIfProduct = quantityOfProduct * 0.90;
+                System.out.printf("%.2f",priceIfProduct);
+            }else if (product.equals("grapefruit")){
+                priceIfProduct = quantityOfProduct * 1.60;
+                System.out.printf("%.2f",priceIfProduct);
+            }else if (product.equals("kiwi")){
+                priceIfProduct = quantityOfProduct * 3.0;
+                System.out.printf("%.2f",priceIfProduct);
+            }else if (product.equals("pineapple")){
+                priceIfProduct = quantityOfProduct * 5.60;
+                System.out.printf("%.2f",priceIfProduct);
+            }else if (product.equals("grapes")){
+                priceIfProduct = quantityOfProduct * 4.2;
+                System.out.printf("%.2f",priceIfProduct);
+            }else {
+                System.out.println("error");
+            }
+        }else {
+            System.out.println("error");
+        }
+    }
+}
