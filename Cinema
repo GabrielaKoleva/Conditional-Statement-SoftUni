@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class cinema_01 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+
+        String projectionType = scan.nextLine();
+        int row = Integer.parseInt(scan.nextLine());
+        int column = Integer.parseInt(scan.nextLine());
+
+        double premiereProjection = 12;
+        double normalProjection = 7.5;
+        double discountProjection = 5;
+
+        double hall = (1.0 * row) * column;
+
+        double finalPrice = 0;
+
+        if (projectionType.equals("Premiere")){
+            finalPrice = hall * premiereProjection;
+        }else if (projectionType.equals("Normal")){
+            finalPrice = hall * normalProjection;
+        }else if (projectionType.equals("Discount")){
+            finalPrice = hall * discountProjection;
+        }
+        System.out.printf("%.2f leva", finalPrice);
+    }
+}
