@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class fishingBoat_04 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        double budget = Double.parseDouble(scan.nextLine());
+        String season = scan.nextLine();
+        int numberOfPeople = Integer.parseInt(scan.nextLine());
+
+        double priceDuringSpring = 3000;
+        double priceDuringSummerAndAutumn = 4200;
+        double priceDuringWinter = 2600;
+
+        double finalPriceForBoat = 0;
+
+        if (season.equals("Spring")){
+            if (numberOfPeople <= 6){
+                finalPriceForBoat = priceDuringSpring - (priceDuringSpring * 0.1);
+            }else if (numberOfPeople > 7 & numberOfPeople <= 11){
+                finalPriceForBoat = priceDuringSpring - (priceDuringSpring * 0.15);
+            }else if (numberOfPeople >= 12){
+                finalPriceForBoat = priceDuringSpring - (priceDuringSpring * 0.25);
+            }
+        }else if (season.equals("Summer") || season.equals("Autumn")){
+            if (numberOfPeople <= 6){
+                finalPriceForBoat = priceDuringSummerAndAutumn -
+                        (priceDuringSummerAndAutumn * 0.1);
+            }else if (numberOfPeople > 7 & numberOfPeople <= 11){
+                finalPriceForBoat = priceDuringSummerAndAutumn -
+                        (priceDuringSummerAndAutumn * 0.15);
+            }else if (numberOfPeople >= 12){
+                finalPriceForBoat = priceDuringSummerAndAutumn -
+                        (priceDuringSummerAndAutumn * 0.25);
+            }
+        }else if (season.equals("Winter")){
+            if (numberOfPeople <= 6){
+                finalPriceForBoat = priceDuringWinter - (priceDuringWinter * 0.1);
+            }else if (numberOfPeople > 7 & numberOfPeople <= 11){
+                finalPriceForBoat = priceDuringWinter - (priceDuringWinter * 0.15);
+            }else if (numberOfPeople >= 12){
+                finalPriceForBoat = priceDuringWinter - (priceDuringWinter * 0.25);
+            }
+        }
+
+        if (numberOfPeople % 2 == 0 && !season.equals("Autumn")){
+            finalPriceForBoat *= 0.95;
+        }
+
+        if (budget >= finalPriceForBoat){
+            finalPriceForBoat = budget - finalPriceForBoat;
+            System.out.printf("Yes! You have %.2f leva left.", finalPriceForBoat);
+        }else {
+            finalPriceForBoat = finalPriceForBoat - budget;
+            System.out.printf("Not enough money! You need %.2f leva.", finalPriceForBoat);
+        }
+    }
+}
