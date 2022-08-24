@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class newHouse_03 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        String flowers = scan.nextLine();
+        int numberOfFlowers = Integer.parseInt(scan.nextLine());
+        int budget = Integer.parseInt(scan.nextLine());
+
+        double price = 0;
+
+        double priceRoses = 5;
+        double priceDahlias = 3.8;
+        double priceTulips = 2.8;
+        double priceNarcissus = 3;
+        double priceGladiolus = 2.5;
+
+        if (flowers.equals("Roses")){
+            price = (1.0 * numberOfFlowers) * priceRoses;
+            if (numberOfFlowers > 80){
+                price = price - (price * 0.1);
+            }
+        }else if (flowers.equals("Dahlias")){
+            price = (1.0 * numberOfFlowers) * priceDahlias;
+            if (numberOfFlowers > 90){
+                price = price - (price * 0.15);
+                }
+            }else if (flowers.equals("Tulips")){
+            price = (1.0 * numberOfFlowers) * priceTulips;
+            if (numberOfFlowers > 80){
+                price = price - (price * 0.15);
+            }
+        }else if (flowers.equals("Narcissus")){
+            price = (1.0 * numberOfFlowers) * priceNarcissus;
+            if (numberOfFlowers < 120){
+                price = price + (price * 0.15);
+            }
+        }else if (flowers.equals("Gladiolus")){
+            price = (1.0 * numberOfFlowers) * priceGladiolus;
+            if (numberOfFlowers < 80){
+                price = price + (price * 0.2);
+            }
+        }
+
+        if (budget >= price){
+            price = budget - price;
+            System.out.printf("Hey, you have a great garden with %d " +
+                    "%s and %.2f leva left.",numberOfFlowers,flowers,price);
+        }else if (budget < price){
+            price = price - budget;
+            System.out.printf("Not enough money, you need " +
+                    "%.2f leva more.", price);
+        }
+    }
+}
