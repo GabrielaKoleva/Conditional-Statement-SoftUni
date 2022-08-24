@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class summerOutfit_02 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+       int degrees = Integer.parseInt(scan.nextLine());
+       String timeFromDay = scan.nextLine();
+
+        if (degrees >= 10 && degrees <= 18){
+            if (timeFromDay.equals("Morning")){
+                System.out.printf("It's %d degrees, " +
+                        "get your Sweatshirt and Sneakers.", degrees);
+            }else if (timeFromDay.equals("Afternoon") || timeFromDay.equals("Evening")){
+                System.out.printf("It's %d degrees, get your Shirt and Moccasins.", degrees);
+            }
+        }else if (degrees > 18 && degrees <= 24){
+            if (timeFromDay.equals("Morning") || timeFromDay.equals("Evening")){
+                System.out.printf("It's %d degrees, get your Shirt and Moccasins.", degrees);
+            }else if (timeFromDay.equals("Afternoon")){
+                System.out.printf("It's %d degrees, get your T-Shirt and Sandals.", degrees);
+            }
+        }else if (degrees >= 25){
+            if (timeFromDay.equals("Morning")){
+                System.out.printf("It's %d degrees, get your T-Shirt and Sandals.", degrees);
+            }else if (timeFromDay.equals("Afternoon")){
+                System.out.printf("It's %d degrees, get your Swim Suit and Barefoot.", degrees);
+            }else if (timeFromDay.equals("Evening")){
+                System.out.printf("It's %d degrees, get your Shirt and Moccasins.", degrees);
+            }
+        }
+    }
+}
