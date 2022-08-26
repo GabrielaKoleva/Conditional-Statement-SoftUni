@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+public class operationsBetweenNumbers_06 {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int number1 = Integer.parseInt(scan.nextLine());
+        int number2 = Integer.parseInt(scan.nextLine());
+        String operator = scan.nextLine();
+
+        double resolve = 0;
+
+        switch (operator){
+            case "+":
+               resolve = (1.0 * number1) + (1.0 * number2);
+               if (resolve % 2 == 0){
+                System.out.printf("%d + %d = %.0f - even",number1,number2,resolve);
+               }else {
+                   System.out.printf("%d + %d = %.0f - odd",number1,number2,resolve);
+               }
+               break;
+            case "-":
+                resolve = (1.0 * number1) - (1.0 * number2);
+                if (resolve % 2 == 0){
+                    System.out.printf("%d - %d = %.0f - even",number1,number2,resolve);
+                }else {
+                    System.out.printf("%d - %d = %.0f - odd",number1,number2,resolve);
+                }
+                break;
+            case "*":
+                resolve = (1.0 * number1) * (1.0 * number2);
+                if (resolve % 2 == 0){
+                    System.out.printf("%d * %d = %.0f - even",number1,number2,resolve);
+                }else {
+                    System.out.printf("%d * %d = %.0f - odd",number1,number2,resolve);
+                }
+                break;
+            case "/":
+                if (number2 == 0) {
+                    System.out.printf("Cannot divide %d by zero", number1);
+                }else {
+                    resolve = (1.0 * number1) / number2;
+                    System.out.printf("%d / %d = %.2f", number1, number2, resolve);
+                }
+                break;
+            case "%":
+                if (number2 == 0){
+                    System.out.printf("Cannot divide %d by zero", number1);
+                }else {
+                    double rest = number1 % number2;
+                    System.out.printf("%d %% %d = %.0f",number1,number2,rest);
+                }
+                break;
+        }
+    }
+}
