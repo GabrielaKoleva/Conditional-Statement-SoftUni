@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class hotelRoom_07 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        String month = scan.nextLine();
+        int numberOfStay = Integer.parseInt(scan.nextLine());
+
+        double priceForOneDayInStudio = 0;
+        double priceForOneDayInApartment = 0;
+
+        double studioPrice = 0;
+        double apartmentPrice = 0;
+
+        switch (month){
+            case "May":
+            case "October":
+                priceForOneDayInStudio = 50;
+                priceForOneDayInApartment = 65;
+                if (numberOfStay >= 7 && numberOfStay <= 14){
+                    studioPrice = (priceForOneDayInStudio - priceForOneDayInStudio * 0.05) * numberOfStay;
+                    apartmentPrice = priceForOneDayInApartment * numberOfStay;
+                }else if (numberOfStay > 14){
+                    studioPrice = (priceForOneDayInStudio - priceForOneDayInStudio * 0.3) * numberOfStay;
+                    apartmentPrice = (priceForOneDayInApartment - priceForOneDayInApartment * 0.1) * numberOfStay;
+                }
+                break;
+            case "June":
+            case "September":
+                priceForOneDayInStudio = 75.2;
+                priceForOneDayInApartment = 68.7;
+                if (numberOfStay > 14){
+                    studioPrice = (priceForOneDayInStudio - priceForOneDayInStudio * 0.2) * numberOfStay;
+                    apartmentPrice = (priceForOneDayInApartment - priceForOneDayInApartment * 0.1) * numberOfStay;
+                }else {
+                    studioPrice = priceForOneDayInStudio * numberOfStay;
+                    apartmentPrice = priceForOneDayInApartment * numberOfStay;
+                }
+                break;
+            case "July":
+            case "August":
+                priceForOneDayInStudio = 76;
+                priceForOneDayInApartment = 77;
+
+                studioPrice = priceForOneDayInStudio * numberOfStay;
+                if (numberOfStay > 14){
+                    apartmentPrice = (priceForOneDayInApartment - priceForOneDayInApartment * 0.1) * numberOfStay;
+                }else {
+                    apartmentPrice = priceForOneDayInApartment * numberOfStay;
+                }
+                break;
+        }
+        System.out.printf("Apartment: %.2f lv.%nStudio: %.2f lv.",apartmentPrice,studioPrice);
+    }
+}
