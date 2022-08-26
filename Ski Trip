@@ -1,0 +1,77 @@
+import java.util.Scanner;
+
+public class skiTrip_09 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int numberOfStay = Integer.parseInt(scan.nextLine());
+        String typeOfRoom = scan.nextLine();
+        String rating = scan.nextLine();
+
+        int numberOfNights = numberOfStay - 1;
+
+        double roomForOnePerson = 18;
+        double apartment = 25;
+        double presidentApartment = 35;
+
+        double finalPrice = 0;
+
+        if (typeOfRoom.equals("room for one person")) {
+            double priceForRoomOnePerson = roomForOnePerson * numberOfNights;
+            if (rating.equals("positive")) {
+                finalPrice = priceForRoomOnePerson + (priceForRoomOnePerson * 0.25);
+            } else if (rating.equals("negative")) {
+                finalPrice = priceForRoomOnePerson - (priceForRoomOnePerson * 0.1);
+            }
+        } else if (typeOfRoom.equals("apartment")) {
+            double priceApartment = apartment * numberOfNights;
+            if (numberOfStay < 10) {
+                finalPrice = priceApartment - (priceApartment * 0.3);
+                if (rating.equals("positive")) {
+                    finalPrice = finalPrice + (finalPrice * 0.25);
+                } else if (rating.equals("negative")) {
+                    finalPrice = finalPrice - (finalPrice * 0.1);
+                }
+            } else if (numberOfStay >= 10 && numberOfNights <= 15) {
+                finalPrice = priceApartment - (priceApartment * 0.35);
+                if (rating.equals("positive")) {
+                    finalPrice = finalPrice + (finalPrice * 0.25);
+                } else if (rating.equals("negative")) {
+                    finalPrice = finalPrice - (finalPrice * 0.1);
+                }
+            } else if (numberOfStay > 15) {
+                finalPrice = priceApartment - (priceApartment * 0.5);
+                if (rating.equals("positive")) {
+                    finalPrice = finalPrice + (finalPrice * 0.25);
+                } else if (rating.equals("negative")) {
+                    finalPrice = finalPrice - (finalPrice * 0.1);
+                }
+            }
+        }else if (typeOfRoom.equals("president apartment")){
+            double pricePresidentApartment = presidentApartment * numberOfNights;
+            if (numberOfStay < 10){
+                finalPrice = pricePresidentApartment - (pricePresidentApartment * 0.1);
+                if (rating.equals("positive")){
+                    finalPrice = finalPrice + (finalPrice * 0.25);
+                }else if (rating.equals("negative")){
+                    finalPrice = finalPrice - (finalPrice * 0.1);
+                }
+            }else if (numberOfStay >= 10 && numberOfNights <= 15){
+                finalPrice = pricePresidentApartment - (pricePresidentApartment * 0.15);
+                if (rating.equals("positive")){
+                    finalPrice = finalPrice + (finalPrice * 0.25);
+                }else if (rating.equals("negative")){
+                    finalPrice = finalPrice - (finalPrice * 0.1);
+                }
+            }else if (numberOfStay > 15){
+                finalPrice = pricePresidentApartment - (pricePresidentApartment * 0.2);
+                if (rating.equals("positive")){
+                    finalPrice = finalPrice + (finalPrice * 0.25);
+                }else if (rating.equals("negative")){
+                    finalPrice = finalPrice - (finalPrice * 0.1);
+                }
+            }
+        }
+        System.out.printf("%.2f", finalPrice);
+    }
+}
